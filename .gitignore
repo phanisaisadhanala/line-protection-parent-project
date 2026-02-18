@@ -1,0 +1,19 @@
+# Maven
+target/
+**/target/
+
+# Logs
+*.log
+
+# Compiled files
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+.vscode/
+
+# Node
+node_modules/
+package-lock.json
