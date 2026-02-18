@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Form</title>
+  <link rel="stylesheet" href="index_styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <img src="img/phasor-grid-logo.png" alt="PhasorGrid" class="logo" style="width:15%; "/>  
+    </div>
+  </header>
+    <div style="text-align:center;"><h1>Line Protection Project Form</h1></div>
+
+  <form id="projectForm">
+    <div class="form-group">
+      <label for="relayLocation">Realy Location*</label>
+      <input type="text" id="relayLocation" name="relayLocation" required />
+      <span class="error" id="relayLocationError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="lineNumber">Line Number*</label>
+      <input type="text" id="lineNumber" name="lineNumber" required />
+      <span class="error" id="lineNumberError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="remoteLocation">Remote Location*</label>
+      <input type="text" id="remoteLocation" name="remoteLocation" required />
+      <span class="error" id="remoteLocationError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="noninalSystemVoltage">Noninal System Voltage* (kV)</label>
+      <select id="noninalSystemVoltage" name="noninalSystemVoltage" required>
+        <option value="">Select</option>
+        <option value="500">500</option>
+        <option value="345">345</option>
+        <option value="230">230</option>
+        <option value="161">161</option>
+        <option value="138">138</option>
+        <option value="115">115</option>
+        <option value="69">69</option>
+        <option value="34.5">34.5</option>
+        <option value="13.8">13.8</option>
+      </select>
+      <span class="error" id="noninalSystemVoltageError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="breakerRating">Breaker Rating* (A)</label>
+      <input type="number" id="breakerRating" name="breakerRating" required />
+      <span class="error" id="breakerRatingError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="conductorRating">Conductor Rating* (A)</label>
+      <input type="text" id="conductorRating" name="conductorRating" required />
+      <span class="error" id="conductorRatingError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="ctrW">CTR W*</label>
+      <input type="number" id="ctrW" name="ctrW" required />
+      <span class="error" id="ctrWError">/5</span>
+    </div>
+
+    <div class="form-group">
+      <label for="ctrX">CTR X*</label>
+      <input type="number" id="ctrX" name="ctrX" required />
+      <span class="error" id="ctrXError">/5</span>
+    </div>
+
+    <div class="form-group">
+      <label for="ptry">PTRY*</label>
+      <input type="number" id="ptry" name="ptry" required />
+      <span class="error" id="ptryError">/1</span>
+    </div>
+
+    <div class="form-group">
+      <label for="prcApplicability">PRC Applicability*</label>
+      <select id="prcApplicability" name="prcApplicability" required>
+        <option value="">Select</option>
+        <option value="PRC-023">PRC-023</option>
+        <option value="PRC-024">PRC-024</option>
+        <option value="PRC-025">PRC-025</option>
+        <option value="PRC-026">PRC-026</option>
+        <option value="NONE">NONE</option>
+      </select>
+      <span class="error" id="prcApplicabilityError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="busScheme">Bus Scheme*</label>
+      <select id="busScheme" name="busScheme" required>
+        <option value="">Select</option>
+        <option value="Single Bus">Single Bus</option>
+        <option value="Double Bus">Double Bus</option>
+        <option value="Breaker and Half">Breaker and Half</option>
+        <option value="Ring Bus">Ring Bus</option>
+        <option value="NONE">NONE</option>
+      </select>
+      <span class="error" id="busSchemeError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="secondlines">Number of Second Lines*</label>
+      <select id="secondlines" name="secondlines" required>
+        <option value="">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+      <span class="error" id="secondlinesError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="numberOfTaps">Number of Taps*</label>
+      <select id="numberOfTaps" name="numberOfTaps" required>
+        <option value="">Select</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+      <span class="error" id="numberOfTapsError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="autoXfmrAtRemote">Auto XFMR's at Remote Station*</label>
+      <select id="autoXfmrAtRemote" name="autoXfmrAtRemote" required>
+        <option value="">Select</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <span class="error" id="autoXfmrAtRemoteError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="numberOfBreakers">Number of Breakers*</label>
+      <select id="numberOfBreakers" name="numberOfBreakers" required>
+        <option value="">Select</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+      <span class="error" id="numberOfBreakersError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="noOfDistributionTransformers">Number of Distribution Transformers*</label>
+      <select id="noOfDistributionTransformers" name="noOfDistributionTransformers" required>
+        <option value="">Select</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+      <span class="error" id="noOfDistributionTransformersError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="relayLoadbility">Relay Loadability Criteria*</label>
+      <select id="relayLoadbility" name="relayLoadbility" required>
+        <option value="">Select</option>
+        <option value="PRC_023_4">PRC_023_4</option>
+        <option value="PRC_025_Synchronous">PRC_025_Synchronous</option>
+        <option value="PRC_025_Synchronous_Wind_Farms_Solar_Array">PRC_025_Synchronous_Wind_Farms_Solar_Array</option>
+      </select>
+      <span class="error" id="relayLoadbilityError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="syncReference">Sync Reference*</label>
+      <select id="syncReference" name="syncReference" required>
+        <option value="">Select</option>
+        <option value="VAY">VAY</option>
+        <option value="VBY">VBY</option>
+        <option value="VCY">VCY</option>
+        <option value="VAZ">VAZ</option>
+        <option value="VBZ">VBZ</option>
+        <option value="VCZ">VCZ</option>
+      </select>
+      <span class="error" id="syncReferenceError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="syncSource">Sync Source*</label>
+      <select id="syncSource" name="syncSource" required>
+        <option value="">Select</option>
+        <option value="VAY">VAY</option>
+        <option value="VBY">VBY</option>
+        <option value="VCY">VCY</option>
+        <option value="VAZ">VAZ</option>
+        <option value="VBZ">VBZ</option>
+        <option value="VCZ">VCZ</option>
+      </select>
+      <span class="error" id="syncSourceError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="hotLineInd">Hot Line Ind*</label>
+      <select id="hotLineInd" name="hotLineInd" required>
+        <option value="">Select</option>
+        <option value="VAY">VAY</option>
+        <option value="VBY">VBY</option>
+        <option value="VCY">VCY</option>
+        <option value="VAZ">VAZ</option>
+        <option value="VBZ">VBZ</option>
+        <option value="VCZ">VCZ</option>
+      </select>
+      <span class="error" id="hotLineIndError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="vazPtRatio">VAZ PT Ratio*</label>
+      <input type="number" id="vazPtRatio" name="vazPtRatio" required />
+      <span class="error" id="vazPtRatioError">/1</span>
+    </div>
+
+    <div class="form-group">
+      <label for="vbzPtRatio">VBZ PT Ratio*</label>
+      <input type="number" id="vbzPtRatio" name="vbzPtRatio" required />
+      <span class="error" id="vbzPtRatioError">/1</span>
+    </div>
+
+    <div class="form-group">
+      <label for="vczPtRatio">VCZ PT Ratio*</label>
+      <input type="number" id="vczPtRatio" name="vczPtRatio" required />
+      <span class="error" id="vczPtRatioError">/1</span>
+    </div>
+
+    <div class="form-group">
+      <label for="remoteCTR">Remote CTR*</label>
+      <input type="text" id="remoteCTR" name="remoteCTR" required />
+      <span class="error" id="remoteCTRError">/1</span>
+    </div>
+
+    <div class="form-group">
+      <label for="remoteBFPU">Remote BKR Fail Phase Pickup* (A)</label>
+      <input type="number" step="0.01" id="remoteBFPU" name="remoteBFPU" required />
+      <span class="error" id="remoteBFPUError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="remoteBFGU">Remote BKR Ground Pickup* (A)</label>
+      <input type="number" step="0.01" id="remoteBFGU" name="remoteBFGU" required />
+      <span class="error" id="remoteBFGUError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="csvUpload">Upload CSV File*</label>
+      <input type="file" id="csvUpload" name="csvFile" accept=".csv" required />
+      <span class="error" id="csvUploadError"></span>
+    </div>
+
+    <button type="button "id="downloadButton" style="display:none; background-color:#28a745; color:white; 
+      padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Download Excel</button>
+    <button type="submit">Submit</button>
+
+    <!-- PRC-025 Synchronous modal -->
+    <div id="criteriaModal" class="modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="criteriaTitle">
+        <div class="modal-head">
+          <h3 id="criteriaTitle">PRC-025 Synchronous - Additional Inputs</h3>
+          <button type="button" class="icon-btn" id="criteriaClose" aria-label="Close">x</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Excel-like sheet -->
+          <div class="sheet-wrap">
+            <div class="sheet-header">
+              <div class="th">Asynchronous Generator Name or<br/>Static/Dynamic Device Name</div>
+              <div class="th">Asynchronous<br/>Generator MVA</div>
+              <div class="th">Qty Asynchronous<br/>Generators</div>
+              <div class="th">Total Asynchronous<br/>Generators MVA</div>
+              <div class="th">Asynchronous<br/>Generator Rated Power Factor</div>
+              <div class="th">Static/Dynamic Devices<br/>Reactive Power in MVAR<br/>that contribute to power flow</div>
+              <div class="th">Asynchronous Generator<br/>Rated Real Power in MW<br/>(calculated)</div>
+              <div class="th">Asynchronous Generator<br/>Rated Reactive Power in MVAR<br/>(calculated)</div>
+            </div>
+
+            <!-- Rows get injected here -->
+            <div id="sheetRows" class="sheet-rows" aria-live="polite"></div>
+
+            <!-- Footer (disabled totals) -->
+            <div class="sheet-footer">
+              <div class="total-label">Total</div>
+              <div class="cell"><input id="footerTotalMVA" class="readout" readonly /></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div class="cell"><input id="footerTotalMVAR" class="readout" readonly /></div>
+              <div class="cell"><input id="footerTotalMW" class="readout" readonly /></div>
+              <div class="cell"><input id="footerTotalMVARcalc" class="readout" readonly /></div>
+            </div>
+          </div>
+
+          <!-- Toolbar under the grid -->
+          <div class="sheet-toolbar">
+            <div class="left">
+              <button type="button" class="btn light" id="addRowBtn">+ Add row</button>
+              <span class="row-count"><span id="rowCount">1</span>/16</span>
+            </div>
+
+            <div class="right">
+              <button type="button" class="btn danger" id="removeRowBtn" title="Remove focused row, or the last row">Remove row</button>
+            </div>
+          </div>
+
+          <p class="modal-note">Tip: <em>Total MVA</em> auto-calculates as <strong>MVA x Qty</strong>.</p>
+        </div>
+
+        <div class="modal-foot">
+          <button type="button" class="btn ghost" id="criteriaCancel">Cancel</button>
+          <button type="button" class="btn" id="criteriaSave">Save</button>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" id="asyncRows" name="asyncRows" value="">
+  </form>
+
+<script src="index_script.js"></script>
+</body>
+</html>
