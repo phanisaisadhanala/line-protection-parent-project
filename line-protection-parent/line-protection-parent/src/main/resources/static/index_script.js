@@ -346,39 +346,62 @@ window.addEventListener('keydown', e => {
     formData.append('csvFile', csvInput.files[0]);
 
     try {
-      submitBtn.disabled = true;
+    // Disable submit button
+    submitBtn.disabled = true;
 
-      const res = await fetch('/upload', {
-    method: 'POST',
-    body: formData
-});
+    // 🔥 Show loading spinner
+    document.getElementById("loader").style.display = "flex";
 
-      if (!res.ok) throw new Error('Failed to generate Excel file');
+    // Send request to backend
+    const res = await fetch('/upload', {
+        method: 'POST',
+        body: formData
+    });
 
-      const blob = await res.blob();
-      const url  = URL.createObjectURL(blob);
+    // If server returned error
+    if (!res.ok) {
+        throw new Error('Failed to generate Excel file');
+    }
 
-      toggleButtons(true);
-      clearFormFields();
+    // Get file from response
+    const blob = await res.blob();
+    const url  = URL.createObjectURL(blob);
 
-      downloadBtn.onclick = () => {
+    // Show download button
+    toggleButtons(true);
+
+    // Clear form fields
+    clearFormFields();
+
+    // Download button logic
+    downloadBtn.onclick = () => {
         const a = document.createElement('a');
         a.href = url;
         a.download = 'Updated Line Protection Calculation Sheet.xlsm';
         document.body.appendChild(a);
         a.click();
         a.remove();
+
         setTimeout(() => URL.revokeObjectURL(url), 1000);
 
         toggleButtons(false);
         submitBtn.disabled = false;
         submitBtn.focus();
-      };
-    } catch (err) {
-      alert('Error: ' + err.message);
-      console.error(err);
-      submitBtn.disabled = false;
-    }
+    };
+
+} catch (err) {
+
+    alert('Error: ' + err.message);
+    console.error(err);
+
+    submitBtn.disabled = false;
+
+} finally {
+
+    // 🔥 Always hide spinner (success or error)
+    document.getElementById("loader").style.display = "none";
+}
+
   });
 
   form.addEventListener('input',  () => toggleButtons(false));

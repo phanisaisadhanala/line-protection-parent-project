@@ -31,6 +31,11 @@ import java.util.*;
 public class FormDataController {
 
     private static final Logger log = LoggerFactory.getLogger(FormDataController.class);
+    @GetMapping("/health")
+public ResponseEntity<String> health() {
+    return ResponseEntity.ok("OK");
+}
+
 
     @PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ByteArrayResource> handleUpload(
