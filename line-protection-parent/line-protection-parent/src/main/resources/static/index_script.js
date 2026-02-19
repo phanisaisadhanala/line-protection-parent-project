@@ -348,7 +348,11 @@ window.addEventListener('keydown', e => {
     try {
       submitBtn.disabled = true;
 
-      const res = await fetch('http://localhost:8080/upload', { method: 'POST', body: formData });
+      const res = await fetch('/upload', {
+    method: 'POST',
+    body: formData
+});
+
       if (!res.ok) throw new Error('Failed to generate Excel file');
 
       const blob = await res.blob();
